@@ -1,0 +1,367 @@
+{
+  "seed": 20260929,
+  "collisions": [
+    {
+      "length": 4,
+      "space": 1679616,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.002942763752
+    },
+    {
+      "length": 5,
+      "space": 60466176,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 8.1860599e-05
+    },
+    {
+      "length": 6,
+      "space": 2176782336,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 2.273996e-06
+    },
+    {
+      "length": 7,
+      "space": 78364164096,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 6.3167e-08
+    },
+    {
+      "length": 8,
+      "space": 2821109907456,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.755e-09
+    },
+    {
+      "length": 9,
+      "space": 101559956668416,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 4.9e-11
+    },
+    {
+      "length": 10,
+      "space": 3656158440062976,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1e-12
+    },
+    {
+      "length": 12,
+      "space": 4738381338321616896,
+      "population": 100,
+      "occupied_buckets": 100,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.0
+    },
+    {
+      "length": 4,
+      "space": 1679616,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.257245275094
+    },
+    {
+      "length": 5,
+      "space": 60466176,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.008226789972
+    },
+    {
+      "length": 6,
+      "space": 2176782336,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.000229440807
+    },
+    {
+      "length": 7,
+      "space": 78364164096,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 6.374067e-06
+    },
+    {
+      "length": 8,
+      "space": 2821109907456,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.77058e-07
+    },
+    {
+      "length": 9,
+      "space": 101559956668416,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 4.918e-09
+    },
+    {
+      "length": 10,
+      "space": 3656158440062976,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.37e-10
+    },
+    {
+      "length": 12,
+      "space": 4738381338321616896,
+      "population": 1000,
+      "occupied_buckets": 1000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.0
+    },
+    {
+      "length": 4,
+      "space": 1679616,
+      "population": 10000,
+      "occupied_buckets": 9969,
+      "colliding_buckets": 31,
+      "colliding_inputs": 62,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 1.0
+    },
+    {
+      "length": 5,
+      "space": 60466176,
+      "population": 10000,
+      "occupied_buckets": 9997,
+      "colliding_buckets": 3,
+      "colliding_inputs": 6,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 0.562564447907
+    },
+    {
+      "length": 6,
+      "space": 2176782336,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.022705643201
+    },
+    {
+      "length": 7,
+      "space": 78364164096,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 0.000637779475
+    },
+    {
+      "length": 8,
+      "space": 2821109907456,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.7721591e-05
+    },
+    {
+      "length": 9,
+      "space": 101559956668416,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 4.92271e-07
+    },
+    {
+      "length": 10,
+      "space": 3656158440062976,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.3674e-08
+    },
+    {
+      "length": 12,
+      "space": 4738381338321616896,
+      "population": 10000,
+      "occupied_buckets": 10000,
+      "colliding_buckets": 0,
+      "colliding_inputs": 0,
+      "max_multiplicity": 1,
+      "theoretical_collision_prob": 1.1e-11
+    },
+    {
+      "length": 4,
+      "space": 1679616,
+      "population": 100000,
+      "occupied_buckets": 96575,
+      "colliding_buckets": 3341,
+      "colliding_inputs": 6766,
+      "max_multiplicity": 4,
+      "theoretical_collision_prob": 1.0
+    },
+    {
+      "length": 5,
+      "space": 60466176,
+      "population": 100000,
+      "occupied_buckets": 99891,
+      "colliding_buckets": 109,
+      "colliding_inputs": 218,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 1.0
+    },
+    {
+      "length": 6,
+      "space": 2176782336,
+      "population": 100000,
+      "occupied_buckets": 99997,
+      "colliding_buckets": 3,
+      "colliding_inputs": 6,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 0.899434429385
+    },
+    {
+      "length": 7,
+      "space": 78364164096,
+      "population": 100000,
+      "occupied_buckets": 99999,
+      "colliding_buckets": 1,
+      "colliding_inputs": 2,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 0.061811167879
+    },
+    {
+      "length": 8,
+      "space": 2821109907456,
+      "population": 100000,
+      "occupied_buckets": 99999,
+      "colliding_buckets": 1,
+      "colliding_inputs": 2,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 0.001770764695
+    },
+    {
+      "length": 9,
+      "space": 101559956668416,
+      "population": 100000,
+      "occupied_buckets": 99999,
+      "colliding_buckets": 1,
+      "colliding_inputs": 2,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 4.9230298e-05
+    },
+    {
+      "length": 10,
+      "space": 3656158440062976,
+      "population": 100000,
+      "occupied_buckets": 99999,
+      "colliding_buckets": 1,
+      "colliding_inputs": 2,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 1.367541e-06
+    },
+    {
+      "length": 12,
+      "space": 4738381338321616896,
+      "population": 100000,
+      "occupied_buckets": 99999,
+      "colliding_buckets": 1,
+      "colliding_inputs": 2,
+      "max_multiplicity": 2,
+      "theoretical_collision_prob": 1.055e-09
+    }
+  ],
+  "retries": [
+    {
+      "length": 4,
+      "total_retries": 32,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 5,
+      "total_retries": 3,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 6,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 7,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 8,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 9,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 10,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    },
+    {
+      "length": 12,
+      "total_retries": 0,
+      "exhausted_inputs": 0
+    }
+  ]
+}

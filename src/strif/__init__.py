@@ -4,6 +4,7 @@ __all__ = (  # noqa: F405
     "__version__",
     # atomic_var.py
     "AtomicVar",
+    "AtomicUpdateConflict",
     # strif.py
     "DEV_NULL",
     "iso_timestamp",
@@ -43,8 +44,17 @@ __all__ = (  # noqa: F405
     "Replacement",
     "insert_multiple",
     "replace_multiple",
+    "Folding",
+    "FoldError",
+    "ShortIDCollisionError",
+    "short_id",
+    "unique_short_id",
+    "fold_repeated_substrings",
+    "expand_repeated_substrings",
     # string_template.py
     "StringTemplate",
+    "TemplateCache",
+    "TemplatePlan",
 )
 
 try:

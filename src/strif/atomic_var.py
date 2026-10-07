@@ -4,9 +4,17 @@ from collections.abc import Callable
 from contextlib import contextmanager
 from typing import Any, Generic, TypeVar
 
-__all__ = ["AtomicVar"]
+__all__ = ["AtomicVar", "AtomicUpdateConflict"]
 
 T = TypeVar("T")
+
+
+class AtomicUpdateConflict(RuntimeError):
+    """
+    Raised by `AtomicVar.retry_update` when an optimistic read-modify-write
+    cannot be committed within the allowed number of retries because other
+    threads keep advancing the value.
+    """
 
 
 def value_is_immutable(obj: Any) -> bool:
@@ -84,6 +92,11 @@ class AtomicVar(Generic[T]):
         self._value: T = initial_value
         # Use an RLock just in case we read from the var while in an update().
         self.lock: threading.RLock = threading.RLock()
+        # Monotonic version token bumped on every committed write. Optimistic
+        # updates snapshot (value, version), recompute, and only commit if the
+        # version is unchanged, so a concurrent writer forces a retry instead of
+        # silently overwriting its update.
+        self._version: int = 0
         self.is_immutable: bool
         if is_immutable is None:
             self.is_immutable = value_is_immutable(initial_value)
@@ -117,6 +130,7 @@ class AtomicVar(Generic[T]):
     def set(self, new_value: T) -> None:
         with self.lock:
             self._value = new_value
+            self._version += 1
 
     def swap(self, new_value: T) -> T:
         """
@@ -125,6 +139,7 @@ class AtomicVar(Generic[T]):
         with self.lock:
             old_value = self._value
             self._value = new_value
+            self._version += 1
             return old_value
 
     def update(self, update_func: Callable[[T], T | None]) -> T:
@@ -139,8 +154,61 @@ class AtomicVar(Generic[T]):
             result = update_func(self._value)
             if result is not None:
                 self._value = result
+                self._version += 1
             # Always return the potentially updated self._value
             return self._value
+
+    @property
+    def version(self) -> int:
+        """Monotonic token bumped on every committed write."""
+        with self.lock:
+            return self._version
+
+    def snapshot(self) -> tuple[T, int]:
+        """
+        Return `(value, version)` together. For mutable values the returned
+        object is shared, so optimistic updates should treat it as read-only and
+        build a replacement value rather than mutating it in place.
+        """
+        with self.lock:
+            return self._value, self._version
+
+    def compare_and_swap(self, expected_version: int, new_value: T) -> bool:
+        """
+        Commit `new_value` only if the current version equals
+        `expected_version`. Returns True on commit, False if another writer
+        advanced the version first (the caller should recompute and retry).
+        """
+        with self.lock:
+            if self._version != expected_version:
+                return False
+            self._value = new_value
+            self._version += 1
+            return True
+
+    def retry_update(
+        self,
+        update_func: Callable[[T], T],
+        max_attempts: int = 100,
+    ) -> T:
+        """
+        Optimistic read-modify-write that never loses a concurrent update.
+
+        Each attempt snapshots `(value, version)`, recomputes the new value
+        from that snapshot, and commits via `compare_and_swap`. A concurrent
+        commit bumps the version, so a stale recompute is rejected and retried
+        from the fresh value instead of overwriting the other writer's result.
+        Raises `AtomicUpdateConflict` if every attempt loses the race.
+        `update_func` must return the new (replacement) value.
+        """
+        if max_attempts < 1:
+            raise ValueError("max_attempts must be at least 1")
+        for _ in range(max_attempts):
+            current, observed_version = self.snapshot()
+            new_value = update_func(current)
+            if self.compare_and_swap(observed_version, new_value):
+                return new_value
+        raise AtomicUpdateConflict(f"update lost the version race after {max_attempts} attempts")
 
     @contextmanager
     def updates(self):
